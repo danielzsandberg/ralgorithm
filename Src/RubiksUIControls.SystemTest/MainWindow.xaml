@@ -1,0 +1,19 @@
+﻿<Window x:Class="RubiksUIControls.SystemTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:rubiks="clr-namespace:RubiksCore.RubiksUIControls;assembly=RubiksUIControls"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.InputBindings>
+        <KeyBinding Key="L" Command="{Binding HotKeyCommand}" CommandParameter="left"/>
+        <KeyBinding Key="R" Command="{Binding HotKeyCommand}" CommandParameter="right"/>
+        <KeyBinding Key="U" Command="{Binding HotKeyCommand}" CommandParameter="up"/>
+        <KeyBinding Key="D" Command="{Binding HotKeyCommand}" CommandParameter="down"/>
+        <KeyBinding Key="F" Command="{Binding HotKeyCommand}" CommandParameter="front"/>
+        <KeyBinding Key="B" Command="{Binding HotKeyCommand}" CommandParameter="back"/>
+    </Window.InputBindings>
+    <Grid>
+        <ScrollViewer HorizontalScrollBarVisibility="Visible">
+        <rubiks:TwoDCube Cube="{Binding RubiksCube}" />
+        </ScrollViewer>
+    </Grid>
+</Window>

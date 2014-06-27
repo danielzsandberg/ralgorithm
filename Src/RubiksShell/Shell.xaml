@@ -1,0 +1,24 @@
+﻿<metro:MetroWindow x:Class="RubiksApp.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="RAlgorithm" Height="350" Width="525" ResizeMode="CanResizeWithGrip"
+        xmlns:Prism="http://www.codeplex.com/prism" Icon="cube.ico" ShowIconOnTitleBar="False">
+    <metro:MetroWindow.WindowCommands>
+        <metro:WindowCommands>
+            <Button Content="About" Command="{Binding AboutCommand}"/>
+            <Button Content="Quick Start" Command="{Binding QuickStartCommand}"/>
+        </metro:WindowCommands>
+    </metro:MetroWindow.WindowCommands>
+    <Grid>
+        <!--<TabItem Header="Cube Configurator" Prism:RegionManager.RegionName="cubeConfigurator"/>
+        <TabItem Header="Solver" Prism:RegionManager.RegionName="solver"/>-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".70*"/>
+            <ColumnDefinition Width=".30*"/>
+        </Grid.ColumnDefinitions>
+        
+        <ContentControl Grid.Column="0" Prism:RegionManager.RegionName="cubeConfigurator"/>
+        <ContentControl Grid.Column="1" Prism:RegionManager.RegionName="solver"/>
+    </Grid>
+</metro:MetroWindow>

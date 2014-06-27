@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="metro-bootstrap.css">
+    <title>RAlgorithm Quickstart</title>
+</head>
+<body class="metro">
+    <h1>RAlgorithm Quickstart</h1>
+    <h2>Creating a Rubiks Algorithm</h2>
+    <ul>
+        <li>
+            If you do not already have a version of Visual Studio 2013 then
+            <a href="http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-desktop">
+                download Visual Studio Express.
+            </a> You will need a Microsoft account to download it.
+        </li>
+        <li>
+            Create a new class library project and change the project name to <i>RubiksAlgorithm</i>. Click OK. <br/>
+            <br/>
+            <img src="vbNewProject.PNG"/>
+        </li>
+        <li>
+            Right click on on the <i>RubiksAlgorithm</i> item in the <i>Solution Explorer</i> panel. A context menu should appear. Select <i>Manage NuGet Packages...</i>. The NuGet package manager window should appear. Type in <i>rubiks</i> into the search bar in the top right hand corner.
+            <br/>
+            <img src="vbNugetManager.png"/>
+        </li>
+        <li>
+            Click on the install button for <i>Rubiks Algorithm Toolset</i>. After the package is finished installing you should see a green checkmark next to it.
+            <img src="vbNugetManagerInstalled.png"/>
+        </li>
+        <li>
+            In the <i>Solution Explorer</i> panel rename <i>Class1.vb</i> to RubiksAlgorithm.vb.
+            <img src="vbRenamedFile.PNG"/> 
+        </li>
+        <li>
+            Copy and paste the following code into the code window. It is the skeleton of a single cube solving algorithm.
+            <pre>
+                <code>
+                    Imports RubiksApp.RubiksAlgorithmToolset
+                    Imports RubiksCore
+                    Public Class RubiksAlgorithm
+                        Implements ICubeSolvingAlgorithm
+                        Public ReadOnly Property AlgorithmName As String Implements ICubeSolvingAlgorithm.AlgorithmName
+                            Get
+                                AlgorithmName = "Algorithm Name"
+                            End Get
+                        End Property
+                        Public ReadOnly Property Author As String Implements ICubeSolvingAlgorithm.Author
+                            Get
+                                Author = "Author Name"
+                            End Get
+                        End Property
+                        Public ReadOnly Property Description As String Implements ICubeSolvingAlgorithm.Description
+                            Get
+                                Description = "Description"
+                            End Get
+                        End Property
+                        Public Sub Solve(cube As RubiksCube) Implements ICubeSolvingAlgorithm.Solve
+                            'QUICKSTART
+                            'Turn the front face to the right once
+                            cube.TurnFront()
+                            'or
+                            cube.TurnFront(TurningDirection.ThreeoClock)
+                            'Turn the front face to the right twice
+                            cube.TurnFront(TurningDirection.SixoClock)
+                            'Turn the front face to the right three times
+                            cube.TurnFront(TurningDirection.NineoClock)
+                            'Turn the front face to the right once, two layers deep
+                            cube.TurnFront(TurningDirection.ThreeoClock, 2)
+                            'Turn the back face to the left once
+                            cube.TurnBack()
+                            'or
+                            cube.TurnBack(TurningDirection.ThreeoClock)
+                            'Turn the back face to the left twice
+                            cube.TurnBack(TurningDirection.SixoClock)
+                            'Turn the back face to the left three times
+                            cube.TurnBack(TurningDirection.NineoClock)
+                            'Turn the back face to the left once, two layers deep
+                            cube.TurnBack(TurningDirection.ThreeoClock, 2)
+                            'Turn the front face to the right once
+                            cube.Turn(RubiksDirection.Front)
+                            'or
+                            cube.Turn(RubiksDirection.Front, TurningDirection.ThreeoClock)
+                            'Turn the front face to the right twice
+                            cube.Turn(RubiksDirection.Front, TurningDirection.SixoClock)
+                            'Turn the front face to the right three times
+                            cube.Turn(RubiksDirection.Front, TurningDirection.NineoClock)
+                            'Turn the front face to the right once, two layers deep
+                            cube.Turn(RubiksDirection.Front, TurningDirection.ThreeoClock, 2)
+                        End Sub
+                    End Class
+                </code>
+            </pre>
+            <br/>
+            <img src="vbAfterCopyPaste.PNG"/>
+        </li>
+        <li>
+            Hit F7 to build your algorithm. This will generate the .dll file that will be consumed by the RAlgorithm.
+        </li>
+        <li>
+            Right click on the <i>RubiksAlgorithm</i> row in the <i>Solution Explorer</i> panel. Click on <i>Open Folder in File Explorer</i>
+            <br/>
+            <img src="vbGettingDll.png"/>
+        </li>
+        <li>
+            Go to the <i>bin</i> folder and then the <i>Debug</i> folder. This folder will contain the dll that will be consumed by the RAlgorithm. It will be called <i>RubiksAlgorithm.dll</i>.
+            <br/>
+            <img src="vbDllFolder.png"/>
+        </li>
+        <li>
+            Copy the file location. Open the RAlgorithm and click on <i>Browse</i>
+        </li>
+        <li>
+            Paste the file location into the open file dialog and select <i>RubiksAlgorithm.dll</i>. Click on <i>Open</i>.
+        </li>
+        <li>
+            After the algorithm row appears beneath the browse button click on the <i>Run</i> button. The cube should move and results should be posted under the algorithm row.
+            <img src="vbAlgorithmRun.png"/>
+        </li>
+    </ul>
+</body>
+</html>

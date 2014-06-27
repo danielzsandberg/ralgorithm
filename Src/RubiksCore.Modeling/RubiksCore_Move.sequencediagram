@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="77fcca63-df4e-4c8e-ace7-d8d5d7ffcab3" name="RubiksCore_Move" linkedPackageId="29c6feb6-b97f-436b-8521-07cf8b60407b" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="449289d5-fe79-4110-b1ef-a8105aad2716">
+      <profileInstance Id="1e9129c6-dd29-4754-b881-0ab5fcef0223" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a7d60bcb-4583-44bc-ba40-2598a39de3e4">
+      <profileInstance Id="2f91e349-57b6-4513-ae67-1711c16ba3b3" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="b1f36874-2851-4792-bffd-af95cc664060" name="RubiksCore_Move" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <elementDefinition Id="136da575-df44-49ff-a064-c7abaafc6459" />
+        <fragments>
+          <behaviorExecutionSpecification Id="9e08a381-5f10-4e1c-ae1c-c935925b0684" name="BehaviorExecutionSpecification1">
+            <elementDefinition Id="f9af7817-1483-43d0-b95b-0a1713271535" />
+            <coveredLifelines>
+              <lifelineMoniker Id="0791ff53-c3e6-4fc1-a926-2f6f0842df67" LastKnownName="face : Face" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="05432175-d1af-42d7-bba9-d523c0394220" LastKnownName="ExecutionOccurrenceSpecification2" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="243216f0-8377-4722-a194-7aa89f8ae43c" LastKnownName="ExecutionOccurrenceSpecification1" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="8d6d921a-da0e-4063-8467-3bb9d06da461" LastKnownName="MessageOccurrenceSpecification2" />
+              <messageOccurrenceSpecificationMoniker Id="18735897-b85b-4328-a3fd-2087184892f5" LastKnownName="MessageOccurrenceSpecification3" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="243216f0-8377-4722-a194-7aa89f8ae43c" name="ExecutionOccurrenceSpecification1">
+            <elementDefinition Id="f9fc747c-026d-49e0-bd7d-dae938971380" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="15c08546-7062-49ba-bd17-3778e47a6917" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="0791ff53-c3e6-4fc1-a926-2f6f0842df67" LastKnownName="face : Face" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="5cc961ed-85bb-408a-9070-adc4560d7cfe" name="MessageOccurrenceSpecification1">
+            <elementDefinition Id="838136ff-c39f-4274-8379-a99cb250edec" />
+            <covered>
+              <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="8d6d921a-da0e-4063-8467-3bb9d06da461" name="MessageOccurrenceSpecification2">
+            <elementDefinition Id="b8943d94-0b1f-4539-90d6-9ecf24a3c834" />
+            <covered>
+              <lifelineMoniker Id="0791ff53-c3e6-4fc1-a926-2f6f0842df67" LastKnownName="face : Face" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="18735897-b85b-4328-a3fd-2087184892f5" name="MessageOccurrenceSpecification3">
+            <elementDefinition Id="3b60db2e-7a90-4e5f-9c58-a62cc16eaec3" />
+            <covered>
+              <lifelineMoniker Id="0791ff53-c3e6-4fc1-a926-2f6f0842df67" LastKnownName="face : Face" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="69b9f9cc-0c61-4e33-bf67-82c88b153f57" name="MessageOccurrenceSpecification4">
+            <elementDefinition Id="13dbeb4d-8ba0-47df-ad57-76b715cb2334" />
+            <covered>
+              <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="05432175-d1af-42d7-bba9-d523c0394220" name="ExecutionOccurrenceSpecification2">
+            <elementDefinition Id="0b707d64-a507-444f-baed-cfa4d80f01b9" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="eb97ccb6-e848-49e5-a3fc-c43023f8704a" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="0791ff53-c3e6-4fc1-a926-2f6f0842df67" LastKnownName="face : Face" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <combinedFragment Id="5cfd225e-d163-45f5-a3a9-15e928e66a5f" name="CombinedFragment1" interactionOperator="Alt" customInteractionOperator="foreach(Cubie cubie in faceCubies)">
+            <elementDefinition Id="efa47cae-a391-4452-89d4-fdeec198aabe" />
+            <coveredLifelines>
+              <lifelineMoniker Id="2d1f6948-7bfc-4978-881c-93eaef4f1b4c" LastKnownName="cubie : Cubie" />
+              <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+            </coveredLifelines>
+            <operands>
+              <interactionOperand Id="de4c4c12-666e-4e50-a0d3-b57f4dd8403e" name="InteractionOperand1">
+                <elementDefinition Id="4c99a13c-0ccd-48ec-91c0-2f08a469d967" />
+                <coveredLifelines>
+                  <lifelineMoniker Id="2d1f6948-7bfc-4978-881c-93eaef4f1b4c" LastKnownName="cubie : Cubie" />
+                  <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+                </coveredLifelines>
+                <guard>
+                  <interactionConstraint Id="df1f0fec-3a66-436f-8f1a-3e4a19996980">
+                    <elementDefinition Id="fad4abd0-6f80-4bf9-b707-0c6bb3f7d2a8" />
+                    <maxInt>
+                      <literalString Id="de294d64-317f-41c2-aea8-7228f4a3e6ee" name="LiteralString1">
+                        <elementDefinition Id="37408c72-f52d-421c-8d2e-f8ce80904aac" />
+                      </literalString>
+                    </maxInt>
+                    <minInt>
+                      <literalString Id="c5e54480-7d8a-49b8-ad69-f217fd2ce92f" name="LiteralString2">
+                        <elementDefinition Id="f4dff3bb-0107-4573-b61e-5afc39e75d4a" />
+                      </literalString>
+                    </minInt>
+                  </interactionConstraint>
+                </guard>
+                <operandOccurrenceSpecifications>
+                  <operandOccurrenceSpecificationMoniker Id="426d361f-c007-4d4d-9f8d-2aef000c6c5e" LastKnownName="OperandOccurrenceSpecification1" />
+                  <operandOccurrenceSpecificationMoniker Id="83125363-0b56-4637-a250-5f9b032ec24b" LastKnownName="OperandOccurrenceSpecification2" />
+                  <operandOccurrenceSpecificationMoniker Id="33e4666e-90e2-4577-9c83-3da73518d0e5" LastKnownName="OperandOccurrenceSpecification3" />
+                  <operandOccurrenceSpecificationMoniker Id="bbdce847-3bf0-4537-a1c3-a49833ac5178" LastKnownName="OperandOccurrenceSpecification4" />
+                </operandOccurrenceSpecifications>
+              </interactionOperand>
+            </operands>
+          </combinedFragment>
+          <operandOccurrenceSpecification Id="426d361f-c007-4d4d-9f8d-2aef000c6c5e" name="OperandOccurrenceSpecification1">
+            <elementDefinition Id="017cc64b-4b8d-4256-b4d5-729545f84dac" />
+            <covered>
+              <lifelineMoniker Id="2d1f6948-7bfc-4978-881c-93eaef4f1b4c" LastKnownName="cubie : Cubie" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="33e4666e-90e2-4577-9c83-3da73518d0e5" name="OperandOccurrenceSpecification3">
+            <elementDefinition Id="c286c751-8555-4747-90fe-7b69e1691a3e" />
+            <covered>
+              <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="58bc31f2-1be5-4edd-8d25-71d4e40e4d95" name="MessageOccurrenceSpecification11">
+            <elementDefinition Id="b9c9d7ab-fa89-4c27-a832-622fbc963820" />
+            <covered>
+              <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="d11e630c-f108-4f99-89c6-7071dc897c21" name="BehaviorExecutionSpecification4">
+            <elementDefinition Id="fff7ad85-465a-486d-aae3-83d36b90dde3" />
+            <coveredLifelines>
+              <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="8a1ef58b-ad1e-4e59-a5ff-dbbf7adab117" LastKnownName="ExecutionOccurrenceSpecification8" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="612ac1ce-bb88-4000-8fef-68f7cebb8db9" LastKnownName="ExecutionOccurrenceSpecification7" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="6d0eb9c5-2d55-49f5-93e7-59fb120008ef" LastKnownName="MessageOccurrenceSpecification12" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="612ac1ce-bb88-4000-8fef-68f7cebb8db9" name="ExecutionOccurrenceSpecification7">
+            <elementDefinition Id="35bb881b-e247-4370-a5f5-a436863b4550" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="df558424-fe97-41a8-a000-7fb664e64db1" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="6d0eb9c5-2d55-49f5-93e7-59fb120008ef" name="MessageOccurrenceSpecification12">
+            <elementDefinition Id="f4837561-95fa-49cf-af1d-666935d0549d" />
+            <covered>
+              <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="8a1ef58b-ad1e-4e59-a5ff-dbbf7adab117" name="ExecutionOccurrenceSpecification8">
+            <elementDefinition Id="e8436ed5-80a2-4323-86a3-c4f671da34c1" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="0214f796-f99b-4c59-a61d-b4c97e87a482" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="de5367f6-c3f6-488d-8eac-6f8c1fa3685e" name="BehaviorExecutionSpecification2">
+            <elementDefinition Id="5a5c5580-4fd1-4741-aec8-3db3f6fc29ec" />
+            <coveredLifelines>
+              <lifelineMoniker Id="2d1f6948-7bfc-4978-881c-93eaef4f1b4c" LastKnownName="cubie : Cubie" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="841654e8-6255-432b-b7ab-5f29d2e70047" LastKnownName="ExecutionOccurrenceSpecification4" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="cbf4f9d3-924f-4822-9ad2-864992f545f0" LastKnownName="ExecutionOccurrenceSpecification3" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="d67d39f7-00d5-43f8-9417-4bcc383f2c00" LastKnownName="MessageOccurrenceSpecification6" />
+              <messageOccurrenceSpecificationMoniker Id="8148a7cd-0a35-454a-a294-278a9e5ecd8f" LastKnownName="MessageOccurrenceSpecification7" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="cbf4f9d3-924f-4822-9ad2-864992f545f0" name="ExecutionOccurrenceSpecification3">
+            <elementDefinition Id="59a50b2d-3332-463d-8510-2d5382196a39" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="9112dfab-524a-4bc6-b85f-c117e38e2baf" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="2d1f6948-7bfc-4978-881c-93eaef4f1b4c" LastKnownName="cubie : Cubie" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="d67d39f7-00d5-43f8-9417-4bcc383f2c00" name="MessageOccurrenceSpecification6">
+            <elementDefinition Id="0fa46931-bc4a-44ac-a207-9781d7bebcf6" />
+            <covered>
+              <lifelineMoniker Id="2d1f6948-7bfc-4978-881c-93eaef4f1b4c" LastKnownName="cubie : Cubie" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="858f7e0b-348e-41a3-8531-ae810e98eef3" name="MessageOccurrenceSpecification5">
+            <elementDefinition Id="11094531-aa7f-4b89-894f-06be6275368a" />
+            <covered>
+              <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="8148a7cd-0a35-454a-a294-278a9e5ecd8f" name="MessageOccurrenceSpecification7">
+            <elementDefinition Id="10b5013d-d189-43a6-a603-2c270e460761" />
+            <covered>
+              <lifelineMoniker Id="2d1f6948-7bfc-4978-881c-93eaef4f1b4c" LastKnownName="cubie : Cubie" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="75c0cde4-6d0e-4dd2-b167-cdf7e80a89aa" name="MessageOccurrenceSpecification8">
+            <elementDefinition Id="06c63cb9-116d-44db-a421-0927916980c3" />
+            <covered>
+              <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="841654e8-6255-432b-b7ab-5f29d2e70047" name="ExecutionOccurrenceSpecification4">
+            <elementDefinition Id="9a485694-ad77-40a8-8ae0-cc75ac961473" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="b10b7a80-b556-416d-be92-a56e1b93dc8f" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="2d1f6948-7bfc-4978-881c-93eaef4f1b4c" LastKnownName="cubie : Cubie" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="bbdce847-3bf0-4537-a1c3-a49833ac5178" name="OperandOccurrenceSpecification4">
+            <elementDefinition Id="52443ec2-d444-4aa1-a2b2-9299cf67628c" />
+            <covered>
+              <lifelineMoniker Id="01c78581-5347-4e87-883b-454e8587527f" LastKnownName="rubiksCube : RubiksCube" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="83125363-0b56-4637-a250-5f9b032ec24b" name="OperandOccurrenceSpecification2">
+            <elementDefinition Id="43f17527-9ada-402a-9ccc-d28fa0dd473f" />
+            <covered>
+              <lifelineMoniker Id="2d1f6948-7bfc-4978-881c-93eaef4f1b4c" LastKnownName="cubie : Cubie" />
+            </covered>
+          </operandOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="01c78581-5347-4e87-883b-454e8587527f" name="rubiksCube : RubiksCube" isActor="false" lifelineDisplayName="rubiksCube : RubiksCube">
+            <elementDefinition Id="2a1772c2-b53c-4dfe-a4ca-6bdd9769de9f" />
+            <represents>
+              <propertyMoniker Id="b8c87861-ca04-4251-b4a1-4fdba0ad5073" />
+            </represents>
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="5cc961ed-85bb-408a-9070-adc4560d7cfe" LastKnownName="MessageOccurrenceSpecification1" />
+              <messageOccurrenceSpecificationMoniker Id="69b9f9cc-0c61-4e33-bf67-82c88b153f57" LastKnownName="MessageOccurrenceSpecification4" />
+              <operandOccurrenceSpecificationMoniker Id="33e4666e-90e2-4577-9c83-3da73518d0e5" LastKnownName="OperandOccurrenceSpecification3" />
+              <messageOccurrenceSpecificationMoniker Id="58bc31f2-1be5-4edd-8d25-71d4e40e4d95" LastKnownName="MessageOccurrenceSpecification11" />
+              <executionOccurrenceSpecificationMoniker Id="612ac1ce-bb88-4000-8fef-68f7cebb8db9" LastKnownName="ExecutionOccurrenceSpecification7" />
+              <executionOccurrenceSpecificationMoniker Id="8a1ef58b-ad1e-4e59-a5ff-dbbf7adab117" LastKnownName="ExecutionOccurrenceSpecification8" />
+              <messageOccurrenceSpecificationMoniker Id="858f7e0b-348e-41a3-8531-ae810e98eef3" LastKnownName="MessageOccurrenceSpecification5" />
+              <messageOccurrenceSpecificationMoniker Id="75c0cde4-6d0e-4dd2-b167-cdf7e80a89aa" LastKnownName="MessageOccurrenceSpecification8" />
+              <operandOccurrenceSpecificationMoniker Id="bbdce847-3bf0-4537-a1c3-a49833ac5178" LastKnownName="OperandOccurrenceSpecification4" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="0791ff53-c3e6-4fc1-a926-2f6f0842df67" name="face : Face" isActor="false" lifelineDisplayName="face : Face">
+            <elementDefinition Id="2ee8417d-7d30-4f43-ae93-5b09cfd2d11d" />
+            <represents>
+              <propertyMoniker Id="4102943d-590f-4c36-b389-085c0c28b4a5" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="243216f0-8377-4722-a194-7aa89f8ae43c" LastKnownName="ExecutionOccurrenceSpecification1" />
+              <executionOccurrenceSpecificationMoniker Id="05432175-d1af-42d7-bba9-d523c0394220" LastKnownName="ExecutionOccurrenceSpecification2" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="2d1f6948-7bfc-4978-881c-93eaef4f1b4c" name="cubie : Cubie" isActor="false" lifelineDisplayName="cubie : Cubie">
+            <elementDefinition Id="d1a121d1-829b-4e55-a902-b855602da8d7" />
+            <represents>
+              <propertyMoniker Id="026d92a8-0819-442f-ba42-41ba0852723e" />
+            </represents>
+            <topLevelOccurrences>
+              <operandOccurrenceSpecificationMoniker Id="426d361f-c007-4d4d-9f8d-2aef000c6c5e" LastKnownName="OperandOccurrenceSpecification1" />
+              <executionOccurrenceSpecificationMoniker Id="cbf4f9d3-924f-4822-9ad2-864992f545f0" LastKnownName="ExecutionOccurrenceSpecification3" />
+              <executionOccurrenceSpecificationMoniker Id="841654e8-6255-432b-b7ab-5f29d2e70047" LastKnownName="ExecutionOccurrenceSpecification4" />
+              <operandOccurrenceSpecificationMoniker Id="83125363-0b56-4637-a250-5f9b032ec24b" LastKnownName="OperandOccurrenceSpecification2" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="6f310ffa-c0d5-4572-93f4-9387934e419a" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="+ GetCubiePositions() : IEnumerable&lt;Postion&gt;">
+            <elementDefinition Id="a3af88f3-b9f0-48bc-b32d-d2a170a78003" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="5cc961ed-85bb-408a-9070-adc4560d7cfe" LastKnownName="MessageOccurrenceSpecification1" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="8d6d921a-da0e-4063-8467-3bb9d06da461" LastKnownName="MessageOccurrenceSpecification2" />
+            </receiveEvent>
+          </message>
+          <message Id="61eb083e-adab-467e-ab5b-ebb646dac285" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <elementDefinition Id="3d0e3240-02ca-45a7-b46f-404469d7313b" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="18735897-b85b-4328-a3fd-2087184892f5" LastKnownName="MessageOccurrenceSpecification3" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="69b9f9cc-0c61-4e33-bf67-82c88b153f57" LastKnownName="MessageOccurrenceSpecification4" />
+            </receiveEvent>
+          </message>
+          <message Id="7e41dcad-47e3-4045-86d7-3d66fd3743da" name="Determine new position for current cubie" messageKind="Complete" messageSort="SynchCall" createSelfMessage="true" signatureText="- DetermineNewPositionForCubie(Cubie cubie, RubiksDirection rotatingFace, TurningDirection turningDirection) : Postion">
+            <elementDefinition Id="1a5ec244-0d70-4eb1-9b19-1f4c2687bea6" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="58bc31f2-1be5-4edd-8d25-71d4e40e4d95" LastKnownName="MessageOccurrenceSpecification11" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="6d0eb9c5-2d55-49f5-93e7-59fb120008ef" LastKnownName="MessageOccurrenceSpecification12" />
+            </receiveEvent>
+          </message>
+          <message Id="f80ef109-688c-40e6-9214-2c91a848c241" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="+ Move(Postion beginPosition, Position endPosition)">
+            <elementDefinition Id="7d42d3b7-7083-4632-b4dd-2f12eba5ba31" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="858f7e0b-348e-41a3-8531-ae810e98eef3" LastKnownName="MessageOccurrenceSpecification5" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="d67d39f7-00d5-43f8-9417-4bcc383f2c00" LastKnownName="MessageOccurrenceSpecification6" />
+            </receiveEvent>
+          </message>
+          <message Id="31b06fe6-f5f5-418c-be0d-881e23505f8c" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <elementDefinition Id="42e3a9b7-9fe0-480f-8428-498d791efb8d" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="8148a7cd-0a35-454a-a294-278a9e5ecd8f" LastKnownName="MessageOccurrenceSpecification7" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="75c0cde4-6d0e-4dd2-b167-cdf7e80a89aa" LastKnownName="MessageOccurrenceSpecification8" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property Id="b8c87861-ca04-4251-b4a1-4fdba0ad5073" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4c00f227-0d82-4f4a-909a-379540cea3d1" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8aa34ed3-ed0a-4505-b0e9-5238475735f0" LastKnownName="RubiksCube" />
+            </type_NamedElement>
+          </property>
+          <property Id="4102943d-590f-4c36-b389-085c0c28b4a5" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c0416f4a-7c0f-4ea7-aa3a-66898b3c1992" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="bebd04b6-7185-4b85-805e-1c045bc40629" LastKnownName="Face" />
+            </type_NamedElement>
+          </property>
+          <property Id="026d92a8-0819-442f-ba42-41ba0852723e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="95816edb-1951-438f-9f5b-4789c0a7d591" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="51273ebe-e28b-42fe-a6d6-ba1b5abb5015" LastKnownName="Cubie" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8aa34ed3-ed0a-4505-b0e9-5238475735f0" name="RubiksCube" isAbstract="false" isLeaf="false" cachedFullName="RubiksCore.Modeling::RubiksCube">
+        <elementDefinition Id="84744e92-4aa1-495f-a676-8b7f842d0d8c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bebd04b6-7185-4b85-805e-1c045bc40629" name="Face" isAbstract="false" isLeaf="false" cachedFullName="RubiksCore.Modeling::Face">
+        <elementDefinition Id="61fd1ef3-883e-40a1-aaf0-ba8059b93090" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="51273ebe-e28b-42fe-a6d6-ba1b5abb5015" name="Cubie" isAbstract="false" isLeaf="false" cachedFullName="RubiksCore.Modeling::Cubie">
+        <elementDefinition Id="d9cc4e82-90d4-4eb2-9b86-877a776cbc8f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="15c08546-7062-49ba-bd17-3778e47a6917" name="ExecutionEvent">
+        <elementDefinition Id="8beeac67-3ce9-4efa-9b87-99b381c7b583" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="eb97ccb6-e848-49e5-a3fc-c43023f8704a" name="ExecutionEvent">
+        <elementDefinition Id="cc5fc681-f9c2-4aaf-9c62-b6f75e013da1" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="9112dfab-524a-4bc6-b85f-c117e38e2baf" name="ExecutionEvent">
+        <elementDefinition Id="6eac942b-d6d9-46b9-81e8-b6da3a13fce6" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="b10b7a80-b556-416d-be92-a56e1b93dc8f" name="ExecutionEvent">
+        <elementDefinition Id="98d492fd-214d-430f-a848-7950f5939027" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="df558424-fe97-41a8-a000-7fb664e64db1" name="ExecutionEvent">
+        <elementDefinition Id="62c98d62-ed6e-440c-ad7e-19669c874b36" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="0214f796-f99b-4c59-a61d-b4c97e87a482" name="ExecutionEvent">
+        <elementDefinition Id="9619186a-a058-415e-8ae9-375fbbb992f6" />
+      </executionEvent>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="29c6feb6-b97f-436b-8521-07cf8b60407b" name="RubiksCore.Modeling">
+    <elementDefinition Id="9bd72f00-4817-4e58-ba12-8f43609fa7f8" />
+  </package>
+</SequenceDesignerModel>
