@@ -66,9 +66,9 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="RubiksCore, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="RubiksCore, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RubiksCore.1.0.0.1\lib\net45\RubiksCore.dll</HintPath>
+      <HintPath>..\packages\RubiksCore.1.0.0.2\lib\net45\RubiksCore.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
