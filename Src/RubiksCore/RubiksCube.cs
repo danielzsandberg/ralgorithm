@@ -61,6 +61,23 @@ namespace RubiksCore
             }
         }
 
+        public bool IsSolved
+        {
+            get
+            {
+                Array rubiksDirectionValues = Enum.GetValues(typeof(RubiksDirection));
+
+                foreach (RubiksDirection direction in rubiksDirectionValues)
+                {
+                    if (!IsFaceSolved(direction))
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
         #endregion
 
         #region Events
@@ -263,6 +280,26 @@ namespace RubiksCore
                 }
             }
             return cubeString.ToString();
+        }
+
+        #endregion
+
+        #region Methods
+
+        private bool IsFaceSolved(RubiksDirection cubeFace)
+        {
+            Dictionary<Position, Cubie> cubieMappings = _cubies.ToDictionary((cubie) => cubie.Position);
+
+            IEnumerable<Position> cubeFacePostions = _faces[cubeFace].CubiePositions;
+            RubiksColor middleColor = cubieMappings[cubeFacePostions.First()].GetColor(cubeFace).Value;
+            foreach(Position pos in cubeFacePostions)
+            {
+                if(cubieMappings[pos].GetColor(cubeFace).Value != middleColor)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         #endregion

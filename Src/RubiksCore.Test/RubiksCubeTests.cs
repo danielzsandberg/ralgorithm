@@ -2577,6 +2577,52 @@ namespace RubiksCore.Test
             Assert.AreEqual<int>(9, colorsOfCube.Count(color => color == RubiksColor.White), "White colors are incorrect");
             Assert.AreEqual<int>(9, colorsOfCube.Count(color => color == RubiksColor.Yellow), "Yellow colors are incorrect");
         }
+
+        [TestMethod]
+        public void IsSolved_WhenCubeIsInitialized_ThenTheCubeShouldBeSolved()
+        {
+            //setup
+            RubiksCube cube = new RubiksCube();
+
+            //exercise and verification
+            Assert.IsTrue(cube.IsSolved);
+        }
+
+        [TestMethod]
+        public void IsSolved_When4By4By4CubeIsInitialized_ThenTheCubeShouldBeSolved()
+        {
+            //setup
+            RubiksCube cube = new RubiksCube(4);
+
+            //exercise and verification
+            Assert.IsTrue(cube.IsSolved);
+        }
+
+        [TestMethod]
+        public void IsSolved_WhenHorizontalTotalMovePerformedOnCube_ThenCubeShouldStillBeSolved()
+        {
+            //setup
+            RubiksCube cube = new RubiksCube();
+
+            //exercise (horizontal total move)
+            cube.TurnUp(TurningDirection.SixoClock, 2);
+
+            //verification
+            Assert.IsTrue(cube.IsSolved);
+        }
+
+        [TestMethod]
+        public void IsSolved_WhenVerticalTotalMovePerformedOnCube_ThenCubeShouldStillBeSolved()
+        {
+            //setup
+            RubiksCube cube = new RubiksCube();
+
+            //exercise (horizontal total move)
+            cube.TurnFront(TurningDirection.SixoClock, 2);
+
+            //verification
+            Assert.IsTrue(cube.IsSolved);
+        }
     }
 
     class TestConfigurator : ICubieConfigurator
