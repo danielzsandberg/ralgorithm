@@ -111,7 +111,7 @@ namespace RubiksApp.CubeSolverModule
 
             SolverResult result = new SolverResult() 
             {
-                WasCubeSolved = IsCubeSolved(_cube),
+                WasCubeSolved = _cube.IsSolved,
                 WasThereAnError = wasError,
                 ErrorMessage = errorMessage,
                 TimeToCompletion = timer.Elapsed,
@@ -123,28 +123,6 @@ namespace RubiksApp.CubeSolverModule
             RunnerState = CubeRunnerState.Stopped;
 
             return result;
-        } 
-
-        private bool IsCubeSolved(RubiksCube cube)
-        {
-            int cubeSize = cube.CubeSize;
-            RubiksCube solvedCube = new RubiksCube(cubeSize);
-            for(int x = 0; x < cubeSize; x++)
-            {
-                for(int y = 0; y < cubeSize; y++)
-                {
-                    for(int z = 0; z < cubeSize; z++)
-                    {
-                        Cubie actualCubie = cube[x, y, z];
-                        Cubie expectedCubie = solvedCube[x, y, z];
-                        if(!actualCubie.Equals(expectedCubie))
-                        {
-                            return false;
-                        }
-                    }
-                }
-            }
-            return true;
         }
 
         void _cube_CubeTurned(object sender, GenericEventArgs<CubeTurnedEvent> e)
