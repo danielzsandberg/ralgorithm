@@ -1,0 +1,2 @@
+1. Create a folder in application directory that contains algorithms that will be loaded on startup of the application.
+2. Fix clear bug. If I hit the clear button I should be able to load a modified type and have those changes take place. Currently this is not happening.
