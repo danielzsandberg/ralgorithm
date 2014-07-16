@@ -24,7 +24,9 @@
 			a. Instantiate registrar in Initialize.
 			b. Pass into vm.
 			c. In vm hook up for AlgorithmsRegistered, AlgorithmsDeregistered, AlgorithmRegistrationUpdated events
-		iii. AlgorithmsRegistered, AlgorithmsDeregistered, AlgorithmRegistrationUpdated logic in vm
+		iii. Register all dlls from Algorithms folder
+			a. Call register after instantiating vm 
+		iv. AlgorithmsRegistered, AlgorithmsDeregistered, AlgorithmRegistrationUpdated logic in vm
 			a. AlgorithmsRegistered
 				i. cubeRunners = cubeRunnerCreator.Create(e.Algorithms);
 				ii. foreach cube runner create new CubeRunnerVM and add to observablecollection
@@ -33,9 +35,9 @@
 				ii. foreach RunnerBarVM remove RunnerBarVM if type is equal to one of algorithms that have been deregistered
 			c. AlgorithmRegistrationUpdated
 				i. foreach RunnerBarVM remove and readd RunnerBarVM if type is equal to one of the algorithms that have been registered
-		iv. BrowseCommand
+		v. BrowseCommand
 			a. Change constructor so that it consumes a registrar
 			b. In execute update so that Register is called
-		v. ClearCommand
+		vi. ClearCommand
 			a. Change constructor so taht is consumes a registrar
 			b. Change execute so that DeregisterAll is called
