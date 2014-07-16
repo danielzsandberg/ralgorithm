@@ -1,6 +1,6 @@
 1. Modify setup to create directory and drop in vovo's dll.
 	a. In product.wxs create new DirectoryElement under INSTALLFOLDER to create the new "Algorithms".
-	b. Add a new folder in repository called includedAlgoirthms and drop vovo's dll in there.
+	b. Add a new folder in repository called includedAlgoirthms and drop vovo's dll in there. DONE 
 	Building vovo's dll
 		a. Pull latest source from vovo's repository into our forked version.
 		b. Rename algorithm. Commit. Push.
@@ -15,11 +15,11 @@
 			b. void Register(ICubeSolvingAlgorithm algorithm)
 			c. void Deregister(Type type)
 			d. void DeregisterAll();
-			d. KeyValuePair<Type, ICubeSolvingAlgorithm>[] RegistrarCopy
-			e. ICubeSolvingAlgorithm GetRegisteredAlgorithm(Type registeredType)
-			e. event EventHandler<GenericEventArgs<IEnumerable<ICubeSolvingAlgorithm>>> AlgorithmsRegistered
-			f. event EventHandler<GenericEventArgs<IEnumerable<ICubeSolvingAlgorithm>>> AlgorithmsDeregistered
-			g. event EventHandler<GenericEventArgs<IEnumerable<ICubeSolvingAlgorithm>>> AlgorithmRegistrationUpdated
+			d. KeyValuePair<Type, CubeRunner>[] RegistrarCopy
+			e. CubeRunner GetRegisteredRunner(Type registeredType)
+			e. event EventHandler<GenericEventArgs<IDictionary<Type,CubeRunner>>> AlgorithmsRegistered
+			f. event EventHandler<GenericEventArgs<IDictionary<Type,CubeRunner>>> AlgorithmsDeregistered
+			g. event EventHandler<GenericEventArgs<IDictionary<Type,CubeRunner>>> AlgorithmRegistrationUpdated
 		ii. Registrar bootstrapping
 			a. Instantiate registrar in Initialize.
 			b. Pass into vm.
@@ -28,10 +28,9 @@
 			a. Call register after instantiating vm 
 		iv. AlgorithmsRegistered, AlgorithmsDeregistered, AlgorithmRegistrationUpdated logic in vm
 			a. AlgorithmsRegistered
-				i. cubeRunners = cubeRunnerCreator.Create(e.Algorithms);
-				ii. foreach cube runner create new CubeRunnerVM and add to observablecollection
+				i. foreach cube runner create new CubeRunnerVM and add to observablecollection
 			b. AlgorithmsDeregistered
-				i. Prerequisite: Add Algorithm Type property to CubeRunner class.
+				i. Prerequisite: Add AlgorithmType property to CubeRunner class.
 				ii. foreach RunnerBarVM remove RunnerBarVM if type is equal to one of algorithms that have been deregistered
 			c. AlgorithmRegistrationUpdated
 				i. foreach RunnerBarVM remove and readd RunnerBarVM if type is equal to one of the algorithms that have been registered
