@@ -1,0 +1,19 @@
+1. Unit tests
+	a. Register_WhenAllAlgorithmsAreNew
+	b. Register_WhenSomeAlgorithmsNewAndSomeAreUpdates
+	c. Deregister
+	d. Deregister_WhenTypeIsNotRegistered
+	e. DeregisterAll
+2. System Tests
+	a. Default algorithm load in debug
+		a. Run RAlgorithm in debug mode.
+		b. The default algorithm should appear on load.
+	b. Default algorithm load on install
+		a. Install the application
+		b. Run RAlgorithm
+		c. The default algorithm should load
+	c. Clear
+		a. Load test1 dll
+		b. Press clear
+		c. Load test2 dll
+		d. Verify that new type has been loaded by looking at the console
