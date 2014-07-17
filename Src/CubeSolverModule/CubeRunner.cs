@@ -78,6 +78,17 @@ namespace RubiksApp.CubeSolverModule
             }
         }
 
+        /// <summary>
+        /// Returns the type of the algorithm that is being run.
+        /// </summary>
+        public Type AlgorithmType
+        {
+            get
+            {
+                return _alg.GetType();
+            }
+        }
+
         #endregion
 
         #region Methods

@@ -65,6 +65,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CubeRunnerRegistrarTests.cs" />
     <Compile Include="CubeRunnerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
