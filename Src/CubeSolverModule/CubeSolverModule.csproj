@@ -84,6 +84,7 @@
     <Compile Include="Enumerations.cs" />
     <Compile Include="ICubeProvider.cs" />
     <Compile Include="ICubeRunnerFactory.cs" />
+    <Compile Include="ICubeRunnerRegistrar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolverResult.cs" />
     <Compile Include="View\AddSubtractConverter.cs" />

@@ -10,10 +10,8 @@ using System.Threading.Tasks;
 
 namespace RubiksApp.CubeSolverModule
 {
-    /// <summary>
-    /// A registrar for cube solving runners. Provides registration, registrar querying, and notification of new registrations.
-    /// </summary>
-    public class CubeRunnerRegistrar
+    
+    public class CubeRunnerRegistrar : ICubeRunnerRegistrar
     {
         #region Instance Variables
 
@@ -37,10 +35,6 @@ namespace RubiksApp.CubeSolverModule
 
         #region Methods
 
-        /// <summary>
-        /// Registers multiple cube runners.
-        /// </summary>
-        /// <param name="cubeRunners">Cube runners to register</param>
         public void Register(IEnumerable<CubeRunner> cubeRunners)
         {
             List<CubeRunner> addedCubeRunners = new List<CubeRunner>();
@@ -93,19 +87,11 @@ namespace RubiksApp.CubeSolverModule
             }
         }
 
-        /// <summary>
-        /// Registers a single cube runner
-        /// </summary>
-        /// <param name="cubeRunner">The cube runner to register</param>
         public void Register(CubeRunner cubeRunner)
         {
             Register(new List<CubeRunner>() { cubeRunner });
         }
 
-        /// <summary>
-        /// Register all algorithms contained in assembly and creates CubeRunners for them.
-        /// </summary>
-        /// <param name="assembly">An assembly that contains algorithms</param>
         public void Register(Assembly assembly)
         {
             IEnumerable<CubeRunner> cubeRunners = _cubeRunnerFactory.CreateCubeRunners(assembly);
@@ -113,20 +99,12 @@ namespace RubiksApp.CubeSolverModule
             Register(cubeRunners);
         }
 
-        /// <summary>
-        /// Register a single algorithm and creates a CubeRunner for it.
-        /// </summary>
-        /// <param name="algorithm">The algorithm to register</param>
         public void Register(ICubeSolvingAlgorithm algorithm)
         {
             CubeRunner value = _cubeRunnerFactory.CreateCubeRunners(new List<ICubeSolvingAlgorithm>() { algorithm }).First();
             Register(value);
         }
 
-        /// <summary>
-        /// Deregisters an algorithm type and all associated CubeRunners.
-        /// </summary>
-        /// <param name="algorithmTypeToDeregister">The type of algorithm to deregister</param>
         public void Deregister(Type algorithmTypeToDeregister)
         {
             CubeRunner removedRunner = null;
@@ -138,9 +116,6 @@ namespace RubiksApp.CubeSolverModule
             }
         }
 
-        /// <summary>
-        /// Deregisters all algorithms and associated cube runners.
-        /// </summary>
         public void DeregisterAll()
         {
             KeyValuePair<Type, CubeRunner>[] registrationsCopy = RegistrationsCopy;
