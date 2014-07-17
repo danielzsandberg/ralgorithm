@@ -2,21 +2,23 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace RubiksApp.CubeSolverModule.View
 {
+    /// <summary>
+    /// Command bound to the browse button. Registers new algorithms.
+    /// </summary>
     public class BrowseCommand : ICommand
     {
-        ICubeRunnerFactory _runnerCreator;
-        CubeRunnerPanelVM _panelVM;
+        ICubeRunnerRegistrar _cubeRunnerRegistrar;
 
-        public BrowseCommand(ICubeRunnerFactory runnerCreator, CubeRunnerPanelVM panelVm)
+        public BrowseCommand(ICubeRunnerRegistrar cubeRunnerRegistrar)
         {
-            _runnerCreator = runnerCreator;
-            _panelVM = panelVm;
+            _cubeRunnerRegistrar = cubeRunnerRegistrar;
         }
 
         public bool CanExecute(object parameter)
@@ -40,10 +42,7 @@ namespace RubiksApp.CubeSolverModule.View
             {
                 foreach(string fileName in ofd.FileNames)
                 {
-                    foreach(CubeRunner runner in _runnerCreator.CreateCubeRunners(fileName))
-                    {
-                        _panelVM.RunnerBars.Add(new RunnerBarVM(runner));
-                    }
+                    _cubeRunnerRegistrar.Register(Assembly.LoadFrom(fileName));
                 }
             }
         }

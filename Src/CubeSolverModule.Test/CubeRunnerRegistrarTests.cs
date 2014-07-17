@@ -26,7 +26,7 @@ namespace CubeSolverModule.Test
 
             int addCount = 0;
             IDictionary<Type, CubeRunner> addedRegistrations = new Dictionary<Type,CubeRunner>();
-            registrar.AlgorithmsRegistered += (sender, args)
+            registrar.RunnersRegistered += (sender, args)
                 =>
                 {
                     addedRegistrations = args.Event;
@@ -35,7 +35,7 @@ namespace CubeSolverModule.Test
 
             int removedCount = 0;
             IDictionary<Type, CubeRunner> removedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmsDeregistered += (sender, args)
+            registrar.RunnersDeregistered += (sender, args)
                 =>
             {
                 removedRegistrations = args.Event;
@@ -44,7 +44,7 @@ namespace CubeSolverModule.Test
 
             int updatedCount = 0;
             IDictionary<Type, CubeRunner> updatedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmRegistrationsUpdated += (sender, args)
+            registrar.RunnerRegistrationsUpdated += (sender, args)
                 =>
             {
                 updatedRegistrations = args.Event;
@@ -84,7 +84,7 @@ namespace CubeSolverModule.Test
 
             int addCount = 0;
             IDictionary<Type, CubeRunner> addedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmsRegistered += (sender, args)
+            registrar.RunnersRegistered += (sender, args)
                 =>
             {
                 addedRegistrations = args.Event;
@@ -93,7 +93,7 @@ namespace CubeSolverModule.Test
 
             int removedCount = 0;
             IDictionary<Type, CubeRunner> removedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmsDeregistered += (sender, args)
+            registrar.RunnersDeregistered += (sender, args)
                 =>
             {
                 removedRegistrations = args.Event;
@@ -102,7 +102,7 @@ namespace CubeSolverModule.Test
 
             int updatedCount = 0;
             IDictionary<Type, CubeRunner> updatedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmRegistrationsUpdated += (sender, args)
+            registrar.RunnerRegistrationsUpdated += (sender, args)
                 =>
             {
                 updatedRegistrations = args.Event;
@@ -140,7 +140,7 @@ namespace CubeSolverModule.Test
 
             int addCount = 0;
             IDictionary<Type, CubeRunner> addedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmsRegistered += (sender, args)
+            registrar.RunnersRegistered += (sender, args)
                 =>
             {
                 addedRegistrations = args.Event;
@@ -149,7 +149,7 @@ namespace CubeSolverModule.Test
 
             int removedCount = 0;
             IDictionary<Type, CubeRunner> removedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmsDeregistered += (sender, args)
+            registrar.RunnersDeregistered += (sender, args)
                 =>
             {
                 removedRegistrations = args.Event;
@@ -158,7 +158,7 @@ namespace CubeSolverModule.Test
 
             int updatedCount = 0;
             IDictionary<Type, CubeRunner> updatedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmRegistrationsUpdated += (sender, args)
+            registrar.RunnerRegistrationsUpdated += (sender, args)
                 =>
             {
                 updatedRegistrations = args.Event;
@@ -195,7 +195,7 @@ namespace CubeSolverModule.Test
 
             int addCount = 0;
             IDictionary<Type, CubeRunner> addedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmsRegistered += (sender, args)
+            registrar.RunnersRegistered += (sender, args)
                 =>
             {
                 addedRegistrations = args.Event;
@@ -204,7 +204,7 @@ namespace CubeSolverModule.Test
 
             int removedCount = 0;
             IDictionary<Type, CubeRunner> removedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmsDeregistered += (sender, args)
+            registrar.RunnersDeregistered += (sender, args)
                 =>
             {
                 removedRegistrations = args.Event;
@@ -213,7 +213,7 @@ namespace CubeSolverModule.Test
 
             int updatedCount = 0;
             IDictionary<Type, CubeRunner> updatedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmRegistrationsUpdated += (sender, args)
+            registrar.RunnerRegistrationsUpdated += (sender, args)
                 =>
             {
                 updatedRegistrations = args.Event;
@@ -248,7 +248,7 @@ namespace CubeSolverModule.Test
 
             int addCount = 0;
             IDictionary<Type, CubeRunner> addedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmsRegistered += (sender, args)
+            registrar.RunnersRegistered += (sender, args)
                 =>
             {
                 addedRegistrations = args.Event;
@@ -257,7 +257,7 @@ namespace CubeSolverModule.Test
 
             int removedCount = 0;
             IDictionary<Type, CubeRunner> removedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmsDeregistered += (sender, args)
+            registrar.RunnersDeregistered += (sender, args)
                 =>
             {
                 removedRegistrations = args.Event;
@@ -266,7 +266,7 @@ namespace CubeSolverModule.Test
 
             int updatedCount = 0;
             IDictionary<Type, CubeRunner> updatedRegistrations = new Dictionary<Type, CubeRunner>();
-            registrar.AlgorithmRegistrationsUpdated += (sender, args)
+            registrar.RunnerRegistrationsUpdated += (sender, args)
                 =>
             {
                 updatedRegistrations = args.Event;

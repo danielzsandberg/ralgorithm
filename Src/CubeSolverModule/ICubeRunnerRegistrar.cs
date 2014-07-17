@@ -60,16 +60,16 @@ namespace RubiksApp.CubeSolverModule
         /// <summary>
         /// Raised when new CubeRunners are registered. Contains the added registrations.
         /// </summary>
-        event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> AlgorithmsRegistered;
+        event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> RunnersRegistered;
 
         /// <summary>
         /// Raised when CubeRunners are deregistered. Contains the removed registrations.
         /// </summary>
-        event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> AlgorithmsDeregistered;
+        event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> RunnersDeregistered;
 
         /// <summary>
         /// Raised when CubeRunner registrations are updated. Contains the updated registrations.
         /// </summary>
-        event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> AlgorithmRegistrationsUpdated;
+        event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> RunnerRegistrationsUpdated;
     }
 }

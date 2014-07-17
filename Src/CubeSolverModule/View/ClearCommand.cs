@@ -7,13 +7,16 @@ using System.Windows.Input;
 
 namespace RubiksApp.CubeSolverModule.View
 {
+    /// <summary>
+    /// Command bound to clear button. Deregisters all CubeRunners
+    /// </summary>
     public class ClearCommand : ICommand
     {
-        CubeRunnerPanelVM _cubeRunnerPanelVm;
+        ICubeRunnerRegistrar _cubeRunnerRegistrar;
 
-        public ClearCommand(CubeRunnerPanelVM cubeRunnerPanelVm)
+        public ClearCommand(ICubeRunnerRegistrar cubeRunnerRegistrar)
         {
-            _cubeRunnerPanelVm = cubeRunnerPanelVm;
+            _cubeRunnerRegistrar = cubeRunnerRegistrar;
         }
 
         public bool CanExecute(object parameter)
@@ -25,7 +28,7 @@ namespace RubiksApp.CubeSolverModule.View
 
         public void Execute(object parameter)
         {
-            _cubeRunnerPanelVm.RunnerBars.Clear();
+            _cubeRunnerRegistrar.DeregisterAll();
         }
     }
 }

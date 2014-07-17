@@ -24,7 +24,8 @@ namespace RubiksApp.CubeSolverModule
         }
         public void Initialize()
         {
-            CubeRunnerPanelVM panelVm = new CubeRunnerPanelVM(new CubeRunnerFactory(_cubeProvider));
+            ICubeRunnerRegistrar registrar = new CubeRunnerRegistrar(new CubeRunnerFactory(_cubeProvider));
+            CubeRunnerPanelVM panelVm = new CubeRunnerPanelVM(registrar);
             _viewRegistry.RegisterViewWithRegion("solver", new Func<object>(() => new CubeRunnerPanel(){DataContext = panelVm}));
         }
     }

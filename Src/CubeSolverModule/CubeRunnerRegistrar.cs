@@ -69,7 +69,7 @@ namespace RubiksApp.CubeSolverModule
 
             if(addedCubeRunners.Count > 0)
             {
-                this.AlgorithmsRegistered(this, new GenericEventArgs<IDictionary<Type, CubeRunner>>(addedCubeRunners.ToDictionary(
+                this.RunnersRegistered(this, new GenericEventArgs<IDictionary<Type, CubeRunner>>(addedCubeRunners.ToDictionary(
                     (runner) =>
                     {
                         return runner.AlgorithmType;
@@ -78,7 +78,7 @@ namespace RubiksApp.CubeSolverModule
             }
             if(updateCubeRunners.Count > 0)
             {
-                this.AlgorithmRegistrationsUpdated(this, new GenericEventArgs<IDictionary<Type, CubeRunner>>(updateCubeRunners.ToDictionary(
+                this.RunnerRegistrationsUpdated(this, new GenericEventArgs<IDictionary<Type, CubeRunner>>(updateCubeRunners.ToDictionary(
                     (runner) =>
                     {
                         return runner.AlgorithmType;
@@ -112,7 +112,7 @@ namespace RubiksApp.CubeSolverModule
 
             if (removeSuccessful)
             {
-                AlgorithmsDeregistered(this, new GenericEventArgs<IDictionary<Type, CubeRunner>>(new Dictionary<Type, CubeRunner>() { { algorithmTypeToDeregister, removedRunner } }));
+                RunnersDeregistered(this, new GenericEventArgs<IDictionary<Type, CubeRunner>>(new Dictionary<Type, CubeRunner>() { { algorithmTypeToDeregister, removedRunner } }));
             }
         }
 
@@ -130,7 +130,7 @@ namespace RubiksApp.CubeSolverModule
 
             if (runners.Count > 0)
             {
-                AlgorithmsDeregistered(this, new GenericEventArgs<IDictionary<Type, CubeRunner>>(runners));
+                RunnersDeregistered(this, new GenericEventArgs<IDictionary<Type, CubeRunner>>(runners));
             }
         } 
 
@@ -150,11 +150,11 @@ namespace RubiksApp.CubeSolverModule
 
         #region Events
 
-        public event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> AlgorithmsRegistered = delegate { };
+        public event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> RunnersRegistered = delegate { };
 
-        public event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> AlgorithmsDeregistered = delegate { };
+        public event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> RunnersDeregistered = delegate { };
 
-        public event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> AlgorithmRegistrationsUpdated = delegate { }; 
+        public event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> RunnerRegistrationsUpdated = delegate { }; 
 
         #endregion
     }
