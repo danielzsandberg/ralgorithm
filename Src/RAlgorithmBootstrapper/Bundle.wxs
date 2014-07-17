@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
-	<Bundle  Name="RAlgorithm" Version="1.0.0.4" Manufacturer="Daniel Sandberg" UpgradeCode="621d8bcc-daf5-4ccd-af77-8cd702680f97">
+	<Bundle  Name="RAlgorithm" Version="1.0.0.5" Manufacturer="Daniel Sandberg" UpgradeCode="621d8bcc-daf5-4ccd-af77-8cd702680f97">
     <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
       <bal:WixStandardBootstrapperApplication LicenseUrl="http://rubiks.codeplex.com/license"/>
     </BootstrapperApplicationRef>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="B7392B23-AB67-499D-BD2B-F4E82ECDD44B" Name="RAlgorithm" Language="1033" Version="1.0.0.4" Manufacturer="Daniel Sandberg" UpgradeCode="EC5FF260-982E-4158-AF2F-5621DA9D585C">
+	<Product Id="B7392B23-AB67-499D-BD2B-F4E82ECDD44B" Name="RAlgorithm" Language="1033" Version="1.0.0.5" Manufacturer="Daniel Sandberg" UpgradeCode="EC5FF260-982E-4158-AF2F-5621DA9D585C">
 		<Package Id="*" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
@@ -11,6 +11,7 @@
       <ComponentGroupRef Id="ModulesComponentGroup"/>
       <ComponentGroupRef Id="StartMenuShortcuts"/>
       <ComponentGroupRef Id="quickStartGuide"/>
+      <ComponentGroupRef Id="DefaultAlgorithmsGroup"/>
 		</Feature>
 
     <WixVariable Id="WixUILicenseRtf" Value="$(var.RubiksShell.TargetDir)\license.rtf"/>
@@ -26,6 +27,7 @@
 				<Directory Id="INSTALLFOLDER" Name="RAlgorithm">
           <Directory Id="MODULES" Name="Modules"/>
           <Directory Id="QUICKSTARTDOCS" Name="QuickStartGuide"/>
+          <Directory Id="ALGORITHMS" Name="Algorithms"/>
         </Directory>
 			</Directory>
 		</Directory>
@@ -96,6 +98,11 @@
           WorkingDirectory="INSTALLFOLDER"/>
         <RemoveFolder Id="ShellMenuShortcutRemove" On="uninstall"/>
         <RegistryValue Root="HKCU" Key="Software\Microsoft\RAlgorithm" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="DefaultAlgorithmsGroup" Directory="ALGORITHMS">
+      <Component Id="DefaultAlgorithms" Guid="C2A6F7C4-BD2B-4690-96C5-20A13CEC2DD0">
+        <File Source="$(var.SolutionDir)\includedAlgorithms\CubeSolver.dll" KeyPath="yes"/>
       </Component>
     </ComponentGroup>
 	</Fragment>
