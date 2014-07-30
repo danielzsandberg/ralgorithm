@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.Prism.PubSubEvents">
+      <HintPath>..\packages\Prism.PubSubEvents.1.0.0\lib\portable-sl4+wp7+windows8+net40\Microsoft.Practices.Prism.PubSubEvents.dll</HintPath>
+    </Reference>
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
     </Reference>
@@ -70,6 +73,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CubeConfiguratorModule\CubeConfiguratorModule.csproj">
+      <Project>{65a4ddf4-3186-4a5f-995d-10b556a50d44}</Project>
+      <Name>CubeConfiguratorModule</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CubeSolverModule\CubeSolverModule.csproj">
       <Project>{5ea72448-52d7-48d9-aff7-438b75be5b09}</Project>
       <Name>CubeSolverModule</Name>

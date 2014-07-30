@@ -11,7 +11,7 @@ namespace RubiksApp.CubeConfiguratorModule
     /// <summary>
     /// Provides the ability to access and modify the cube that is currently under configuration
     /// </summary>
-    public interface ICubeConfigurationService : INotifyPropertyChanged
+    public interface ICubeConfigurationService
     {
         /// <summary>
         /// Provides a reference to the cube that is under configuration.
@@ -24,6 +24,11 @@ namespace RubiksApp.CubeConfiguratorModule
         /// </summary>
         /// <param name="cube">The cube that will replace the one currently under configuraiton</param>
         void SetCube(RubiksCube cube);
+
+        /// <summary>
+        /// Raised when a new cube is set via the SetCube method.
+        /// </summary>
+        event EventHandler<GenericEventArgs<RubiksCube>> NewCubeSet;
  
     }
 }

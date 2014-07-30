@@ -10,6 +10,7 @@ using RubiksApp.CubeConfiguratorModule;
 using System.IO;
 using System.Diagnostics;
 using System.Reflection;
+using Microsoft.Practices.Prism.PubSubEvents;
 
 namespace RubiksApp.CubeSolverModule
 {
@@ -19,15 +20,17 @@ namespace RubiksApp.CubeSolverModule
     {
         IRegionViewRegistry _viewRegistry;
         ICubeConfigurationService _cubeConfigurationService;
+        IEventAggregator _eventAggregator;
 
-        public CubeSolverModule(IRegionViewRegistry viewRegistry, ICubeConfigurationService cubeConfigurationService)
+        public CubeSolverModule(IRegionViewRegistry viewRegistry, ICubeConfigurationService cubeConfigurationService, IEventAggregator eventAggregator)
         {
             _viewRegistry = viewRegistry;
             _cubeConfigurationService = cubeConfigurationService;
+            _eventAggregator = eventAggregator;
         }
         public void Initialize()
         {
-            ICubeRunnerRegistrar registrar = new CubeRunnerRegistrar(new CubeRunnerFactory(_cubeConfigurationService));
+            ICubeRunnerRegistrar registrar = new CubeRunnerRegistrar(new CubeRunnerFactory(_cubeConfigurationService), _eventAggregator);
             CubeRunnerPanelVM panelVm = new CubeRunnerPanelVM(registrar, _cubeConfigurationService);
             DirectoryInfo algorithmsDirectory = new DirectoryInfo("./Algorithms");
             if(algorithmsDirectory.Exists)

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Practices.Prism.Modularity;
+using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Unity;
 using System;
@@ -28,7 +29,7 @@ namespace RubiksApp.CubeConfiguratorModule
             Assembly.LoadFrom(@"Modules\RubiksUIControls.dll");
 
             //Register configuration service with container
-            ICubeConfigurationService cubeConfigurationService = new CubeConfigurationService();
+            ICubeConfigurationService cubeConfigurationService = new CubeConfigurationService(_container.Resolve<IEventAggregator>());
             _container.RegisterInstance(cubeConfigurationService, new ContainerControlledLifetimeManager());
 
             //Instantiate and register view

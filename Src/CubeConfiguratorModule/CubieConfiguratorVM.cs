@@ -24,9 +24,9 @@ namespace RubiksApp.CubeConfiguratorModule
         public CubieConfiguratorVM(ICubeConfigurationService configService)
         {
             _configService = configService;
-            _configService.PropertyChanged += _configService_PropertyChanged;
+            _configService.NewCubeSet += _configService_NewCubeSet;
             _hotkeyCommand = new CubeManipulationCommand(configService);
-        } 
+        }
 
         #endregion
 
@@ -52,28 +52,16 @@ namespace RubiksApp.CubeConfiguratorModule
 
         #region Methods
 
-        void _configService_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        void _configService_NewCubeSet(object sender, GenericEventArgs<RubiksCube> e)
         {
-            if (e.PropertyName == "Cube")
-            {
-                OnPropertyChanged("Cube");
-            }
-        }
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged(this, new PropertyChangedEventArgs("Cube"));
         } 
 
         #endregion
 
         #region INotifyPropertyChanged\\Events
 
-        public event PropertyChangedEventHandler PropertyChanged; 
+        public event PropertyChangedEventHandler PropertyChanged = delegate { }; 
 
         #endregion
 

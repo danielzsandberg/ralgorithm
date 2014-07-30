@@ -98,6 +98,14 @@ namespace RubiksApp.CubeSolverModule
             {
                 return _cube;
             }
+            set
+            {
+                if(_cube != value)
+                {
+                    _cube = value;
+                    OnPropertyChanged("Cube");
+                }
+            }
         }
 
         #endregion

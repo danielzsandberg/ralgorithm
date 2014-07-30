@@ -89,6 +89,7 @@
     <Compile Include="CubieConfiguratorVM.cs" />
     <Compile Include="CubeManipulationCommand.cs" />
     <Compile Include="ICubeConfigurationService.cs" />
+    <Compile Include="NewCubeSetEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

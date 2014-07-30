@@ -1,5 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.Practices.Prism.PubSubEvents;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using RubiksApp.CubeConfiguratorModule;
 using RubiksApp.CubeSolverModule;
 using RubiksApp.RubiksAlgorithmToolset;
 using System;
@@ -22,7 +24,9 @@ namespace CubeSolverModule.Test
             Mock<ICubeRunnerFactory> cubeRunnerFactoryFake = new Mock<ICubeRunnerFactory>();
             cubeRunnerFactoryFake.Setup(factory => factory.CreateCubeRunners(new List<ICubeSolvingAlgorithm>(){alg1})).Returns(new List<CubeRunner>(){new CubeRunner(new RubiksCore.RubiksCube(), alg1)});
             cubeRunnerFactoryFake.Setup(factory => factory.CreateCubeRunners(new List<ICubeSolvingAlgorithm>() { alg2 })).Returns(new List<CubeRunner>() { new CubeRunner(new RubiksCore.RubiksCube(), alg2) });
-            CubeRunnerRegistrar registrar = new CubeRunnerRegistrar(cubeRunnerFactoryFake.Object);
+            Mock<IEventAggregator> eventAggregatorFake = new Mock<IEventAggregator>();
+            eventAggregatorFake.Setup(aggregator => aggregator.GetEvent<NewCubeSetEvent>()).Returns(new NewCubeSetEvent());
+            CubeRunnerRegistrar registrar = new CubeRunnerRegistrar(cubeRunnerFactoryFake.Object, eventAggregatorFake.Object);
 
             int addCount = 0;
             IDictionary<Type, CubeRunner> addedRegistrations = new Dictionary<Type,CubeRunner>();
@@ -80,7 +84,9 @@ namespace CubeSolverModule.Test
             Mock<ICubeRunnerFactory> cubeRunnerFactoryFake = new Mock<ICubeRunnerFactory>();
             cubeRunnerFactoryFake.Setup(factory => factory.CreateCubeRunners(new List<ICubeSolvingAlgorithm>() { alg1 })).Returns(new List<CubeRunner>() { new CubeRunner(new RubiksCore.RubiksCube(), alg1) });
             cubeRunnerFactoryFake.Setup(factory => factory.CreateCubeRunners(new List<ICubeSolvingAlgorithm>() { alg1V2 })).Returns(new List<CubeRunner>() { new CubeRunner(new RubiksCore.RubiksCube(), alg1V2) });
-            CubeRunnerRegistrar registrar = new CubeRunnerRegistrar(cubeRunnerFactoryFake.Object);
+            Mock<IEventAggregator> eventAggregatorFake = new Mock<IEventAggregator>();
+            eventAggregatorFake.Setup(aggregator => aggregator.GetEvent<NewCubeSetEvent>()).Returns(new NewCubeSetEvent());
+            CubeRunnerRegistrar registrar = new CubeRunnerRegistrar(cubeRunnerFactoryFake.Object, eventAggregatorFake.Object);
 
             int addCount = 0;
             IDictionary<Type, CubeRunner> addedRegistrations = new Dictionary<Type, CubeRunner>();
@@ -136,7 +142,9 @@ namespace CubeSolverModule.Test
             Algorithm1 alg1 = new Algorithm1();
             Mock<ICubeRunnerFactory> cubeRunnerFactoryFake = new Mock<ICubeRunnerFactory>();
             cubeRunnerFactoryFake.Setup(factory => factory.CreateCubeRunners(new List<ICubeSolvingAlgorithm>() { alg1 })).Returns(new List<CubeRunner>() { new CubeRunner(new RubiksCore.RubiksCube(), alg1) });
-            CubeRunnerRegistrar registrar = new CubeRunnerRegistrar(cubeRunnerFactoryFake.Object);
+            Mock<IEventAggregator> eventAggregatorFake = new Mock<IEventAggregator>();
+            eventAggregatorFake.Setup(aggregator => aggregator.GetEvent<NewCubeSetEvent>()).Returns(new NewCubeSetEvent());
+            CubeRunnerRegistrar registrar = new CubeRunnerRegistrar(cubeRunnerFactoryFake.Object, eventAggregatorFake.Object);
 
             int addCount = 0;
             IDictionary<Type, CubeRunner> addedRegistrations = new Dictionary<Type, CubeRunner>();
@@ -191,7 +199,9 @@ namespace CubeSolverModule.Test
             Algorithm1 alg1 = new Algorithm1();
             Mock<ICubeRunnerFactory> cubeRunnerFactoryFake = new Mock<ICubeRunnerFactory>();
             cubeRunnerFactoryFake.Setup(factory => factory.CreateCubeRunners(new List<ICubeSolvingAlgorithm>() { alg1 })).Returns(new List<CubeRunner>() { new CubeRunner(new RubiksCore.RubiksCube(), alg1) });
-            CubeRunnerRegistrar registrar = new CubeRunnerRegistrar(cubeRunnerFactoryFake.Object);
+            Mock<IEventAggregator> eventAggregatorFake = new Mock<IEventAggregator>();
+            eventAggregatorFake.Setup(aggregator => aggregator.GetEvent<NewCubeSetEvent>()).Returns(new NewCubeSetEvent());
+            CubeRunnerRegistrar registrar = new CubeRunnerRegistrar(cubeRunnerFactoryFake.Object, eventAggregatorFake.Object);
 
             int addCount = 0;
             IDictionary<Type, CubeRunner> addedRegistrations = new Dictionary<Type, CubeRunner>();
@@ -244,7 +254,9 @@ namespace CubeSolverModule.Test
             Mock<ICubeRunnerFactory> cubeRunnerFactoryFake = new Mock<ICubeRunnerFactory>();
             cubeRunnerFactoryFake.Setup(factory => factory.CreateCubeRunners(new List<ICubeSolvingAlgorithm>() { alg1 })).Returns(new List<CubeRunner>() { new CubeRunner(new RubiksCore.RubiksCube(), alg1) });
             cubeRunnerFactoryFake.Setup(factory => factory.CreateCubeRunners(new List<ICubeSolvingAlgorithm>() { alg2 })).Returns(new List<CubeRunner>() { new CubeRunner(new RubiksCore.RubiksCube(), alg2) });
-            CubeRunnerRegistrar registrar = new CubeRunnerRegistrar(cubeRunnerFactoryFake.Object);
+            Mock<IEventAggregator> eventAggregatorFake = new Mock<IEventAggregator>();
+            eventAggregatorFake.Setup(aggregator => aggregator.GetEvent<NewCubeSetEvent>()).Returns(new NewCubeSetEvent());
+            CubeRunnerRegistrar registrar = new CubeRunnerRegistrar(cubeRunnerFactoryFake.Object, eventAggregatorFake.Object);
 
             int addCount = 0;
             IDictionary<Type, CubeRunner> addedRegistrations = new Dictionary<Type, CubeRunner>();

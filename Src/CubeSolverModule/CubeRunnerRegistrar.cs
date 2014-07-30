@@ -1,4 +1,6 @@
-﻿using RubiksApp.RubiksAlgorithmToolset;
+﻿using Microsoft.Practices.Prism.PubSubEvents;
+using RubiksApp.CubeConfiguratorModule;
+using RubiksApp.RubiksAlgorithmToolset;
 using RubiksCore;
 using System;
 using System.Collections.Concurrent;
@@ -16,7 +18,8 @@ namespace RubiksApp.CubeSolverModule
         #region Instance Variables
 
         ConcurrentDictionary<Type, CubeRunner> _registrations = new ConcurrentDictionary<Type, CubeRunner>();
-        ICubeRunnerFactory _cubeRunnerFactory; 
+        ICubeRunnerFactory _cubeRunnerFactory;
+        IEventAggregator _eventAggregator; 
 
         #endregion
 
@@ -26,9 +29,12 @@ namespace RubiksApp.CubeSolverModule
         /// Creates a new CubeRunnerRegistrar.
         /// </summary>
         /// <param name="cubeRunnerFactory">Factory used to create CubeRunners when registering ICubeSolvingAlgorithms</param>
-        public CubeRunnerRegistrar(ICubeRunnerFactory cubeRunnerFactory)
+        /// <param name="eventAggregator">Event aggregator used to subscribe global system events</param>
+        public CubeRunnerRegistrar(ICubeRunnerFactory cubeRunnerFactory, IEventAggregator eventAggregator)
         {
             _cubeRunnerFactory = cubeRunnerFactory;
+            _eventAggregator = eventAggregator;
+            _eventAggregator.GetEvent<NewCubeSetEvent>().Subscribe(UpdateAllRunnersWithNewCube);
         } 
 
         #endregion
@@ -134,6 +140,14 @@ namespace RubiksApp.CubeSolverModule
             }
         } 
 
+        private void UpdateAllRunnersWithNewCube(RubiksCube newCube)
+        {
+            foreach(CubeRunner runner in _registrations.Values)
+            {
+                runner.Cube = newCube;
+            }
+        }
+
         #endregion
 
         #region Properties
@@ -154,7 +168,7 @@ namespace RubiksApp.CubeSolverModule
 
         public event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> RunnersDeregistered = delegate { };
 
-        public event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> RunnerRegistrationsUpdated = delegate { }; 
+        public event EventHandler<GenericEventArgs<IDictionary<Type, CubeRunner>>> RunnerRegistrationsUpdated = delegate { };
 
         #endregion
     }
