@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="B7392B23-AB67-499D-BD2B-F4E82ECDD44B" Name="RAlgorithm" Language="1033" Version="1.0.0.5" Manufacturer="Daniel Sandberg" UpgradeCode="EC5FF260-982E-4158-AF2F-5621DA9D585C">
+	<Product Id="B7392B23-AB67-499D-BD2B-F4E82ECDD44B" Name="RAlgorithm" Language="1033" Version="1.0.0.6" Manufacturer="Daniel Sandberg" UpgradeCode="EC5FF260-982E-4158-AF2F-5621DA9D585C">
 		<Package Id="*" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
