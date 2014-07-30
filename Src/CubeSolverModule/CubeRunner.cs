@@ -89,6 +89,17 @@ namespace RubiksApp.CubeSolverModule
             }
         }
 
+        /// <summary>
+        /// The cube that is being solved.
+        /// </summary>
+        public RubiksCube Cube
+        {
+            get
+            {
+                return _cube;
+            }
+        }
+
         #endregion
 
         #region Methods

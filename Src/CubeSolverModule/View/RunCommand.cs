@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RubiksApp.CubeConfiguratorModule;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,13 @@ namespace RubiksApp.CubeSolverModule.View
     {
         CubeRunner _runner;
         RunnerBarVM _runnerBarVM;
+        ICubeConfigurationService _cubeConfigurator;
 
-        public RunCommand(CubeRunner runner, RunnerBarVM runnerBarVM)
+        public RunCommand(CubeRunner runner, RunnerBarVM runnerBarVM, ICubeConfigurationService cubeConfigurator)
         {
             _runner = runner;
             _runnerBarVM = runnerBarVM;
+            _cubeConfigurator = cubeConfigurator;
         }
         public bool CanExecute(object parameter)
         {
@@ -29,6 +32,7 @@ namespace RubiksApp.CubeSolverModule.View
             SolverResult result = _runner.Run();
             _runnerBarVM.LastRunsResult = result;
             _runnerBarVM.AllResults.Add(result);
+            _cubeConfigurator.SetCube(_runnerBarVM.Runner.Cube.Copy());
         }
     }
 }

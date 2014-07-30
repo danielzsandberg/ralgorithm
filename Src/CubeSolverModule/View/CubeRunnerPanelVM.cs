@@ -1,4 +1,5 @@
-﻿using RubiksCore;
+﻿using RubiksApp.CubeConfiguratorModule;
+using RubiksCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,6 +12,12 @@ namespace RubiksApp.CubeSolverModule.View
 {
     public class CubeRunnerPanelVM
     {
+        #region Instance Variables
+
+        ICubeConfigurationService _cubeConfigurator; 
+
+        #endregion
+
         #region Properties
 
         public ObservableCollection<RunnerBarVM> RunnerBars
@@ -25,25 +32,20 @@ namespace RubiksApp.CubeSolverModule.View
             private set;
         }
 
-        public ICommand ClearCommand
-        {
-            get;
-            private set;
-        } 
-
         #endregion
 
         #region Constructors
 
-        public CubeRunnerPanelVM(ICubeRunnerRegistrar registrar)
+        public CubeRunnerPanelVM(ICubeRunnerRegistrar registrar, ICubeConfigurationService cubeConfigurator)
         {
+            _cubeConfigurator = cubeConfigurator;
+
             registrar.RunnersRegistered += registrar_RunnersRegistered;
             registrar.RunnerRegistrationsUpdated += registrar_RunnerRegistrationsUpdated;
             registrar.RunnersDeregistered += registrar_RunnersDeregistered;
 
             RunnerBars = new ObservableCollection<RunnerBarVM>();
             BrowseCommand = new BrowseCommand(registrar);
-            ClearCommand = new ClearCommand(registrar);
         } 
 
         #endregion
@@ -74,7 +76,7 @@ namespace RubiksApp.CubeSolverModule.View
         {
             foreach (var registration in newRegistrations)
             {
-                RunnerBars.Add(new RunnerBarVM(registration.Value));
+                RunnerBars.Add(new RunnerBarVM(registration.Value, _cubeConfigurator));
             }
         }
 

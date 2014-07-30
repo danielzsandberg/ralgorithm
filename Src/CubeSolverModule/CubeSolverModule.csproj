@@ -57,13 +57,13 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="RubiksAlgorithmToolset, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="RubiksAlgorithmToolset, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RubiksAlgorithmToolset.1.0.0.2\lib\net45\RubiksAlgorithmToolset.dll</HintPath>
+      <HintPath>..\packages\RubiksAlgorithmToolset.1.0.0.3\lib\net45\RubiksAlgorithmToolset.dll</HintPath>
     </Reference>
-    <Reference Include="RubiksCore, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="RubiksCore, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RubiksCore.1.0.0.2\lib\net45\RubiksCore.dll</HintPath>
+      <HintPath>..\packages\RubiksCore.1.0.0.3\lib\net45\RubiksCore.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -77,19 +77,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CubeRunnerRegistrar.cs" />
-    <Compile Include="ConfiguratorModuleCubeProvider.cs" />
     <Compile Include="CubeRunner.cs" />
     <Compile Include="CubeRunnerFactory.cs" />
     <Compile Include="CubeSolverModule.cs" />
     <Compile Include="Enumerations.cs" />
-    <Compile Include="ICubeProvider.cs" />
     <Compile Include="ICubeRunnerFactory.cs" />
     <Compile Include="ICubeRunnerRegistrar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolverResult.cs" />
     <Compile Include="View\AddSubtractConverter.cs" />
     <Compile Include="View\BrowseCommand.cs" />
-    <Compile Include="View\ClearCommand.cs" />
     <Compile Include="View\CubeRunnerPanel.xaml.cs">
       <DependentUpon>CubeRunnerPanel.xaml</DependentUpon>
     </Compile>

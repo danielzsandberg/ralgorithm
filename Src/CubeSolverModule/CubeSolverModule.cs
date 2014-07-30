@@ -18,17 +18,17 @@ namespace RubiksApp.CubeSolverModule
     public class CubeSolverModule : IModule
     {
         IRegionViewRegistry _viewRegistry;
-        ICubeProvider _cubeProvider;
+        ICubeConfigurationService _cubeConfigurationService;
 
         public CubeSolverModule(IRegionViewRegistry viewRegistry, ICubeConfigurationService cubeConfigurationService)
         {
             _viewRegistry = viewRegistry;
-            _cubeProvider = new ConfiguratorModuleCubeProvider(cubeConfigurationService);
+            _cubeConfigurationService = cubeConfigurationService;
         }
         public void Initialize()
         {
-            ICubeRunnerRegistrar registrar = new CubeRunnerRegistrar(new CubeRunnerFactory(_cubeProvider));
-            CubeRunnerPanelVM panelVm = new CubeRunnerPanelVM(registrar);
+            ICubeRunnerRegistrar registrar = new CubeRunnerRegistrar(new CubeRunnerFactory(_cubeConfigurationService));
+            CubeRunnerPanelVM panelVm = new CubeRunnerPanelVM(registrar, _cubeConfigurationService);
             DirectoryInfo algorithmsDirectory = new DirectoryInfo("./Algorithms");
             if(algorithmsDirectory.Exists)
             {

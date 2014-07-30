@@ -10,7 +10,7 @@ namespace RubiksApp.CubeConfiguratorModule
 {
     public class CubeConfigurationService : ICubeConfigurationService
     {
-        public RubiksCube _cube;
+        RubiksCube _cube;
 
         public CubeConfigurationService()
         {

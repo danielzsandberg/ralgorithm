@@ -36,7 +36,6 @@ namespace RubiksCore.RubiksUIControls
             RubiksCube oldCube = (RubiksCube)e.OldValue;
             TwoDCube twoDCube = (TwoDCube)d;
 
-            twoDCube.ReinitializeCubes(oldCube, newCube);
             twoDCube.PopulateCube();
         }
 
@@ -52,21 +51,6 @@ namespace RubiksCore.RubiksUIControls
             {
                 SetValue(CubeProperty, value);
             }
-        }
-
-        private void ReinitializeCubes(RubiksCube oldCube, RubiksCube newCube)
-        {
-            if (oldCube != null)
-            {
-                oldCube.CubeTurned -= cubeTurned;
-            }
-
-            newCube.CubeTurned += cubeTurned;
-        }
-
-        void cubeTurned(object sender, GenericEventArgs<CubeTurnedEvent> e)
-        {
-            PopulateCube();
         }
 
         private void PopulateCube()

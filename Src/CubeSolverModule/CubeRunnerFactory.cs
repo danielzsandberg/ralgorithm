@@ -1,4 +1,5 @@
-﻿using RubiksApp.RubiksAlgorithmToolset;
+﻿using RubiksApp.CubeConfiguratorModule;
+using RubiksApp.RubiksAlgorithmToolset;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace RubiksApp.CubeSolverModule
 {
     public class CubeRunnerFactory : ICubeRunnerFactory
     {
-        ICubeProvider _cubeProvider;
+        ICubeConfigurationService _cubeProvider;
 
-        public CubeRunnerFactory(ICubeProvider provider)
+        public CubeRunnerFactory(ICubeConfigurationService provider)
         {
             _cubeProvider = provider;
         }
@@ -33,7 +34,7 @@ namespace RubiksApp.CubeSolverModule
 
         public IEnumerable<CubeRunner> CreateCubeRunners(IEnumerable<ICubeSolvingAlgorithm> algorithms)
         {
-            return algorithms.Select(alg => new CubeRunner(_cubeProvider.ProvideCube(), alg)).ToArray();
+            return algorithms.Select(alg => new CubeRunner(_cubeProvider.GetCube(), alg)).ToArray();
         }
     }
 }

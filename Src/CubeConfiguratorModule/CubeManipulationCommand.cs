@@ -57,6 +57,8 @@ namespace RubiksApp.CubeConfiguratorModule
             {
                 currentCube.Shuffle();
             }
+
+            _cubeConfigService.SetCube(currentCube.Copy());
         }
     }
 }

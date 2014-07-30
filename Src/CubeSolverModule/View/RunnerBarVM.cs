@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RubiksApp.CubeConfiguratorModule;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -62,10 +63,10 @@ namespace RubiksApp.CubeSolverModule.View
 
         #region Constructors
 
-        public RunnerBarVM(CubeRunner runner)
+        public RunnerBarVM(CubeRunner runner, ICubeConfigurationService cubeConfigurator)
         {
             Runner = runner;
-            RunCommand = new RunCommand(runner, this);
+            RunCommand = new RunCommand(runner, this, cubeConfigurator);
         }
 
         #endregion

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RubiksCore</name>
+    </assembly>
+    <members>
+        <member name="T:RubiksCore.CubeCopier">
+            <summary>
+            Copies the cubies of an existing RubiksCube
+            </summary>
+        </member>
+        <member name="M:RubiksCore.CubeCopier.#ctor(RubiksCore.RubiksCube)">
+            <summary>
+            Creates a new copier
+            </summary>
+            <param name="cubeToCopy">The cube that will be copied</param>
+        </member>
+        <member name="M:RubiksCore.CubeFace.GetPositionsOfLayersBeneathFace(System.Int32)">
+            <summary>
+            Gets CubiePositions for this face in addition to any number of layers deep.
+            </summary>
+            <param name="numberOfLayersDeep">The number of layers beneath the face to get positions for.</param>
+            <returns>The cumulative positions for this face and the layers beneath it.</returns>
+        </member>
+        <member name="T:RubiksCore.SolvedPuzzleCubieConfigurator">
+            <summary>
+            Returns cubies in their solved state
+            </summary>
+        </member>
+    </members>
+</doc>
