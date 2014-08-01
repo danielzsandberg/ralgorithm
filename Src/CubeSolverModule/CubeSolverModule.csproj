@@ -84,7 +84,9 @@
     <Compile Include="ICubeRunnerFactory.cs" />
     <Compile Include="ICubeRunnerRegistrar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RubiksCubeExtensions.cs" />
     <Compile Include="SolverResult.cs" />
+    <Compile Include="TwoDPosition.cs" />
     <Compile Include="View\AddSubtractConverter.cs" />
     <Compile Include="View\BrowseCommand.cs" />
     <Compile Include="View\CubeRunnerPanel.xaml.cs">
