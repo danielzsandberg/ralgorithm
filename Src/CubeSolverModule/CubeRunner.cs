@@ -180,12 +180,26 @@ namespace RubiksApp.CubeSolverModule
 
         void _cube_CubeTurned(object sender, GenericEventArgs<CubeTurnedEvent> e)
         {
-            _numberOfTurns++;
+            RubiksCube cube = sender as RubiksCube;
+            bool isTotalMove = (cube.CubeSize - 1) == e.Event.NumberOfLayersDeep;
+            if (!isTotalMove)
+            {
+                _numberOfTurns++;
+            }
             if (IsInDebugMode)
             {
-                Trace.WriteLine(string.Format("**********Move Number: {0}, Face: {1}, Direction: {2}, Number of Layers:{3}**********", _numberOfTurns,
-                    Enum.GetName(typeof(RubiksDirection), e.Event.FaceTurned), Enum.GetName(typeof(TurningDirection), e.Event.DirectionOfTurn),
-                    e.Event.NumberOfLayersDeep.ToString()));
+                if (!isTotalMove)
+                {
+                    Trace.WriteLine(string.Format("**********Move Number: {0}, Face: {1}, Direction: {2}, Number of Layers:{3}**********", _numberOfTurns,
+                        Enum.GetName(typeof(RubiksDirection), e.Event.FaceTurned), Enum.GetName(typeof(TurningDirection), e.Event.DirectionOfTurn),
+                        e.Event.NumberOfLayersDeep.ToString()));
+                }
+                else
+                {
+                    Trace.WriteLine(string.Format("**********Total Move, Face: {0}, Direction: {1}, Number of Layers:{2}**********",
+                        Enum.GetName(typeof(RubiksDirection), e.Event.FaceTurned), Enum.GetName(typeof(TurningDirection), e.Event.DirectionOfTurn),
+                        e.Event.NumberOfLayersDeep.ToString()));
+                }
                 Trace.WriteLine(Create2DRubiksString(sender as RubiksCube));
             }
         }

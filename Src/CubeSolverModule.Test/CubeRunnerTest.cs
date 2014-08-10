@@ -161,6 +161,23 @@ namespace CubeSolverModule.Test
         }
 
         [TestMethod]
+        public void Run_WhenAlgorithmDoesATotalMoveThenMovesToCompletionIsZero()
+        {
+            RubiksCube cube = new RubiksCube();
+            Mock<ICubeSolvingAlgorithm> algMock = new Mock<ICubeSolvingAlgorithm>();
+            algMock.Setup(alg => alg.Solve(cube)).Callback(new Action(() =>
+            {
+                cube.TurnUp(TurningDirection.NineoClock, 2);
+            }));
+
+            CubeRunner runner = new CubeRunner(cube, algMock.Object);
+
+            SolverResult result = runner.Run();
+
+            Assert.AreEqual<int>(0, result.MovesToCompletion);
+        }
+
+        [TestMethod]
         public void Run_WhenAlgorithmOnSecondRunTurnsCubeThreeTimes_ThenMovesToCompletionIsThree()
         {
             RubiksCube cube = new RubiksCube();
@@ -183,5 +200,7 @@ namespace CubeSolverModule.Test
 
             Assert.AreEqual<int>(3, result.MovesToCompletion);
         }
+
+        
     }
 }
