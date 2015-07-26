@@ -1,6 +1,6 @@
 # ralgorithm
 
-![](Docs/screenshot.png)
+![](Docs/screenshot.PNG)
 
 RAlgorithm is a development platform and an app for Rubik's Cube enthusiasts to develop and test algorithms to solve the cube.
 
