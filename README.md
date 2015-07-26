@@ -4,7 +4,7 @@ RAlgorithm is a development platform and an app for Rubik's Cube enthusiasts to 
 
 ## Download
 
-Coming soon...
+[Latest Version](https://drive.google.com/file/d/0B0FA5NymZcUYUGozYWpfNlBlSTg/edit?usp=sharing). For Windows 7 and Windows 8 only. If you do not have the necessary software components it may take some time for the installer to complete.
 
 ## Old repository
 
